@@ -50,17 +50,9 @@ ul {
     font-style: italic;
 }
 
-/* =========================
-   MAIN
-========================= */
-
 #main {
     padding-top: 100px;
 }
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav {
     position: fixed;
@@ -135,10 +127,6 @@ nav h1 {
     color: var(--ink);
 }
 
-/* =========================
-   REPEATED SECTION BACKGROUND
-========================= */
-
 #overview,
 #mods,
 #features {
@@ -197,18 +185,12 @@ nav h1 {
     mask-composite: intersect;
 }
 
-/* Keep content above background */
-
 #overview > *:not(.section-bg),
 #mods > *:not(.section-bg),
 #features > *:not(.section-bg) {
     position: relative;
     z-index: 1;
 }
-
-/* =========================
-   OVERVIEW / HERO
-========================= */
 
 #overview {
     display: flex;
@@ -265,10 +247,6 @@ nav h1 {
 
     -webkit-text-stroke: 0.7px #000;
 }
-
-/* =========================
-   MODS
-========================= */
 
 #mods {
     min-height: 300px;
@@ -334,10 +312,6 @@ nav h1 {
     filter: brightness(1.05);
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 .primary-btn {
     background: var(--primary);
     border: 1px solid #431245;
@@ -379,10 +353,6 @@ nav h1 {
 .primary-btn:hover {
     filter: brightness(1.15);
 }
-
-/* =========================
-   FEATURES
-========================= */
 
 #features {
     padding: 100px 0;
@@ -463,10 +433,6 @@ nav h1 {
     margin: 0;
 }
 
-/* =========================
-   DOWNLOAD LIST
-========================= */
-
 .download-list {
     display: flex;
     flex-direction: column;
@@ -540,10 +506,6 @@ nav h1 {
     color: var(--ink);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     width: 100%;
 
@@ -598,10 +560,6 @@ footer .disclaimer {
 
     font-size: 12px;
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media screen and (max-width: 1000px) {
 
