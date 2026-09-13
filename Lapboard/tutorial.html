@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LapboardMC - Tutorial</title><!--made by LemonCookie1028-->
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=JetBrains+Mono:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6E7A6;
+    --paper:#FFFBEF;
+    --ink:#151210;
+    --moss:#3E9257;
+    --blade:#4E7FE0;
+    --line:#00000022;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito', sans-serif;
+  }
+
+  h1,h2,.marker{
+    font-family:'Permanent Marker', cursive;
+    line-height:1.1;
+  }
+
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:var(--blade);}
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  header.nav{
+    border-bottom:2px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .logo2{width:320px; margin-bottom:16px;}
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Permanent Marker', cursive;
+    font-size:1.2rem;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .brand img{
+    width:34px;height:34px;
+    border-radius:50%;
+  }
+  nav.links{display:flex;gap:20px;font-weight:700;font-size:0.9rem;}
+  nav.links a{text-decoration:none; color:var(--ink);}
+  nav.links a:hover{color:var(--blade);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--blade);
+    outline-offset:2px;
+  }
+
+  .page-head{
+    padding:48px 24px 8px;
+    text-align:center;
+  }
+  .page-head h1{
+    font-size:clamp(1.8rem, 5vw, 2.6rem);
+    margin:0 0 10px;
+  }
+  .page-head p{
+    max-width:480px;
+    margin:0 auto;
+    font-weight:600;
+    color:#4a453d;
+  }
+
+  hr.rule{
+    border:none;
+    border-top:2px solid var(--line);
+    max-width:520px;
+    margin:36px auto;
+  }
+
+  section{padding:0 24px 40px;}
+
+  .warn{
+    background:var(--paper);
+    border:2px solid var(--ink);
+    border-radius:12px;
+    padding:14px 18px;
+    font-weight:700;
+    font-size:0.92rem;
+    margin-bottom:24px;
+  }
+  .warn strong{color:#B8701F;}
+
+  ol.steps-list{
+    max-width:520px;
+    margin:0 auto;
+    padding-left:0;
+    list-style:none;
+    counter-reset:step;
+    display:grid;
+    gap:16px;
+  }
+  ol.steps-list li{
+    counter-increment:step;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  ol.steps-list li::before{
+    content:counter(step);
+    font-family:'Permanent Marker',cursive;
+    color:var(--blade);
+    font-size:1.1rem;
+    flex-shrink:0;
+    width:26px;
+    text-align:center;
+  }
+  ol.steps-list li .body{font-weight:600; font-size:0.98rem;}
+  ol.steps-list li .body strong{color:var(--ink);}
+  ol.steps-list li .body code{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:1px 6px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.88em;
+  }
+
+  .btn{
+    display:inline-block;
+    font-weight:800;
+    font-size:0.95rem;
+    padding:12px 22px;
+    border-radius:10px;
+    border:2px solid var(--ink);
+    cursor:pointer;
+    text-decoration:none;
+    background:var(--moss);
+    color:#fff;
+    border-color:var(--moss);
+  }
+  .cta-row{text-align:center; margin-top:36px;}
+
+  footer{
+    margin-top:20px;
+    border-top:2px solid var(--line);
+    padding:28px 24px;
+    text-align:center;
+  }
+  footer .marker{font-size:1.2rem; margin-bottom:6px;}
+  footer p{margin:4px 0; font-size:0.85rem; color:#6a655a; font-weight:600;}
+
+  @media (max-width:600px){
+    nav.links{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+<!--made by LemonCookie1028-->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="LapboardMC logo"> LapboardMC</a>
+    <nav class="links">
+      <a href="index.html#connect">Connect</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="index.html#rules">Rules</a><!--made by LemonCookie1028-->
+      <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener">Discord</a>
+    </nav><!--made by LemonCookie1028-->
+    <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" class="btn" style="padding:8px 16px; font-size:0.85rem; background:var(--blade); border-color:var(--blade);">Join Discord</a>
+  </div>
+</header>
+
+<div class="page-head">
+  <h1 class="marker">How to Join</h1>
+  <p>For new players confused on how to join - follow these steps in order.</p><!--made by LemonCookie1028-->
+</div>
+
+<hr class="rule"><!--made by LemonCookie1028-->
+
+<section>
+  <div class="wrap">
+    <div class="warn" style="text-align: center"><strong>Important:</strong> We recommend using Emerald Launcher, not vanilla LCE</div>
+
+    <ol class="steps-list">
+      <li><div class="body">Download <a href="https://github.com/LCE-Hub/LCE-Emerald-Launcher/releases/latest" target="_blank" rel="noopener">Emerald Launcher</a>.</div></li>
+      <li><div class="body">Set up the launcher by going through first-time setup. <strong>Be sure to set your username - it cannot be "Player".</strong></div></li>
+      <li><div class="body">Select <strong>Revelations</strong> as your LCE version and download it. <strong>Any other version will cause issues in game - choose Revelations.</strong></div></li>
+      <li><div class="body">Press Play in Emerald Launcher and the game should start up.</div></li>
+      <li><div class="body">The server "LapboardMC" should already be in your server list. If not, continue to steps 6–7.</div></li>
+      <li><div class="body">Click <strong>Add Server</strong>.</div></li><!--made by LemonCookie1028-->
+      <li><div class="body">Enter the IP address and port from the <a href="index.html#connect">Connect section</a>.</div></li>
+      <li><div class="body">Once you've added and joined the server, go back to Discord and head to the <a href="https://discord.com/channels/1412024540522876962/1503719259639910532" target="_blank" rel="noopener">verification channel</a>.</div></li>
+      <li><div class="body">Enter the <strong>same username</strong> you used when setting up the launcher. This part matters.</div></li>
+      <li><div class="body">You'll get a confirmation message that your account has been linked, then a DM containing your verification code.</div></li>
+      <li><div class="body">Back in Minecraft, you'll be frozen at first. Press <strong>T</strong> to open chat and type <code>/verify (your code)</code>&nbsp;- for example, <code>/verify 175829</code>.</div></li>
+      <li><div class="body">If that worked, you'll be able to walk around inside the obsidian box. Type <code>/spawn</code> to head to world spawn.</div></li>
+      <li><div class="body">Have fun! Contact Diamondst or a staff member if you have questions or need help joining.</div></li>
+    </ol>
+
+    <div class="cta-row">
+      <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" class="btn blade">Join Discord</a>
+    </div>
+  </div><!--made by LemonCookie1028-->
+</section>
+
+<footer>
+  <img class="logo2" src="assets/logo2.png" alt="LapboardMC logo" style="scale: .8"> 
+  <p class="mono">104.168.125.227 : 4444</p>
+  <p>Email: diamondst.lapboardmc@gmail.com</p>
+  <p>Site administrator email: Itisnow@cyberdude.com</p>
+  <p><a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" style="text-decoration:underline;">discord.gg/2YXwKZqfS5</a></p>
+</footer> <!--made by LemonCookie1028-->
+
+</body>
+</html><!--made by LemonCookie1028-->

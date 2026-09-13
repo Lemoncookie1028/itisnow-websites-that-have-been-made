@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LapboardMC</title><!--made by LemonCookie1028-->
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!--made by LemonCookie1028-->
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=JetBrains+Mono:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6E7A6;
+    --paper:#FFFBEF;
+    --ink:#151210;
+    --moss:#3E9257;
+    --blade:#4E7FE0;
+    --line:#00000022;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito', sans-serif;
+  }
+
+  h1,h2,.marker{
+    font-family:'Permanent Marker', cursive;
+    line-height:1.1;
+  }
+
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit;}
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  header.nav{
+    border-bottom:2px solid var(--line);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Permanent Marker', cursive;
+    font-size:1.2rem;
+  }
+  .brand img{
+    width:34px;height:34px;
+    border-radius:50%;
+  }
+  nav.links{display:flex;gap:20px;font-weight:700;font-size:0.9rem;}
+  nav.links a{text-decoration:none;}
+  nav.links a:hover{color:var(--blade);}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--blade);
+    outline-offset:2px;
+  }
+
+  .hero{
+    padding:56px 24px 40px;
+    text-align:center;
+  }
+  .logo-badge{
+    width:510px;
+    max-width:100%;
+    border:2px solid var(--ink);
+    border-radius:8px;
+  }
+  h1.headline{
+    font-size:clamp(2rem, 6vw, 3rem);
+    margin:20px 0 12px;
+  }
+  .hero p.sub{
+    max-width:520px;
+    margin:0 auto 28px;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#4a453d;
+  }
+  .cta-row{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    font-weight:800;
+    font-size:0.95rem;
+    padding:12px 22px;
+    border-radius:10px;
+    border:2px solid var(--ink);
+    cursor:pointer;
+    text-decoration:none;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .btn.primary{background:var(--moss); color:#fff; border-color:var(--moss);}
+  .btn.blade{background:var(--blade); color:#fff; border-color:var(--blade);}
+
+  hr.rule{
+    border:none;
+    border-top:2px solid var(--line);
+    max-width:520px;
+    margin:48px auto;
+  }
+
+  section{padding:0 24px;}
+  .section-head{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .section-head .marker{font-size:1.8rem;}
+
+  .connect-card{
+    max-width:480px;
+    margin:0 auto;
+    background:var(--paper);
+    border:2px solid var(--ink);
+    border-radius:14px;
+    padding:28px 24px;
+    text-align:center;
+  }
+  .logo2{width:320px; margin-bottom:16px;}
+  .ip-line{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:clamp(1.2rem, 4vw, 1.6rem);
+  }
+  .ip-line .sep{color:var(--blade);}
+  .copy-btn{
+    margin-top:18px;
+    background:var(--blade);
+    color:#fff;
+    border:none;
+    font-weight:800;
+    font-size:0.9rem;
+    padding:11px 20px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .copy-btn:hover{opacity:0.9;}
+
+  .steps{
+    max-width:520px;
+    margin:32px auto 0;
+    display:grid;
+    gap:10px;
+  }
+  .step{
+    display:flex;
+    gap:12px;
+    align-items:baseline;
+    font-weight:700;
+  }
+  .step .step-num{
+    font-family:'Permanent Marker',cursive;
+    color:var(--blade);
+    width:22px;
+    flex-shrink:0;
+  }
+  .step span{display:block; font-weight:400; font-size:0.9rem; color:#5a5449;}
+
+  .rules-list{
+    max-width:520px;
+    margin:0 auto;
+    list-style:none;
+    padding:0;
+    display:grid;
+    gap:10px;
+  }
+
+  .tutorial{
+    display:inline-block;
+    margin-top:22px;
+    font-weight:800;
+    font-size:0.95rem;
+    padding:12px 22px;
+    border-radius:10px;
+    border:2px solid var(--ink);
+    background:var(--paper);
+    color:var(--ink);
+    text-decoration:none;
+    cursor:pointer;
+  }
+  .tutorial:hover{background:var(--ink); color:var(--cream);}
+
+  .rules-list li{
+    border-bottom:1px solid var(--line);
+    padding-bottom:10px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .rules-list li strong{color:var(--ink);}
+
+  .banner-strip{
+    max-width:520px;
+    margin:40px auto 0;
+    text-align:center;
+  }
+  .banner-strip img{
+    max-width:100%;
+    border-radius:12px;
+  }
+
+  footer{
+    margin-top:60px;
+    border-top:2px solid var(--line);
+    padding:28px 24px;
+    text-align:center;
+  }
+  footer .marker{font-size:1.2rem; margin-bottom:6px;}
+  footer p{margin:4px 0; font-size:0.85rem; color:#6a655a; font-weight:600;}
+
+  @media (max-width:600px){
+    nav.links{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body><!--made by LemonCookie1028-->
+
+<header class="nav">
+  <div class="nav-inner">
+   <a class="brand" href="index.html"><img src="assets/logo.png" alt="LapboardMC logo"> LapboardMC</a>
+    <nav class="links">
+      <a href="#connect">Connect</a>
+      <a href="tutorial.html">Tutorial</a>
+      <a href="#rules">Rules</a><!--made by LemonCookie1028-->
+      <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener">Discord</a>
+    </nav>
+    <a href="#connect" class="btn primary" style="padding:8px 16px; font-size:0.85rem;">Join Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="logo2" src="assets/logo2.png" alt="LapboardMC logo">
+    <p class="sub">LapboardMC is a SMP server made for the community to work together to build awesome things and progress together! We've been striving to make the experience always be best for the community, we have an authentication system and many plugins to make the survival experience the most fun! Anyone is welcome and we would love to see you join! :)</p>
+    <div class="cta-row">
+      <a href="#connect" class="btn primary">Get Server IP</a><!--made by LemonCookie1028-->
+      <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" class="btn blade">Join Discord</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="connect">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="marker">Server Info</h2>
+    </div>
+    <div class="connect-card">
+      <div class="ip-line">
+        <span id="ip-text">104.168.125.227</span><span class="sep">:</span><span id="port-text">4444</span>
+      </div>
+      <button class="copy-btn" onclick="copyIP()">
+        <span id="copy-label">Copy IP</span>
+      </button>
+      <button class="copy-btn" onclick="copyPORT()">
+        <span id="copy-port-label">Copy Port</span>
+      </button>
+    </div>
+    <div style="text-align:center;">
+      <a href="tutorial.html" class="tutorial">Tutorial</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="marker">Rules</h2><!--made by LemonCookie1028-->
+    </div>
+    <ul class="rules-list">
+      <li><strong>No griefing.</strong> Destroying or altering other players' builds without permission is strictly prohibited.</li>
+      <li><strong>No hacking or cheating.</strong> X-ray, fly hacks, auto-clickers, or any unfair modifications aren't allowed - this includes exploits like duping.</li>
+      <li><strong>Be respectful.</strong> Treat others with kindness. Harassment, hate speech, or toxic behavior will not be tolerated.</li>
+      <li><strong>No being homophobic, racist, etc.</strong> Self explanatory, no exceptions.</li>
+      <li><strong>No stealing.</strong> Don't take items from other players' chests or property unless explicitly allowed.</li>
+      <li><strong>Keep chat clean.</strong> Avoid spamming, excessive swearing, or inappropriate content. Keep it friendly.</li>
+      <li><strong>No advertising.</strong> Don't promote other servers or external content without permission - ask first.</li>
+      <li><strong>Changing usernames.</strong> Update your username in <a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" style="text-decoration:underline;">the Discord</a> if you change it in-game. If you get banned over a mismatched name, hop on with an account that matches or update it in Discord and reach out - you'll get unbanned.</li>
+      <li><strong>Use common sense.</strong> Don't be a jerk. If you think something might be against the rules, it probably is - just ask if you're unsure.</li>
+    </ul>
+    <p style="text-align:center; margin-top:22px; font-weight:700; font-size:0.9rem; color:#4a453d;">By playing on this server, you agree to follow these rules. Thanks, and have fun :)</p>
+
+    <div class="banner-strip">
+      <img src="assets/banner.png" alt="LapboardMC banner" style="scale: 1.1">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img class="logo2" src="assets/logo2.png" alt="LapboardMC logo" style="scale: .8"> 
+  <p class="mono">104.168.125.227 : 4444</p>
+  <p>Email: diamondst.lapboardmc@gmail.com</p>
+  <p>Site administrator email: Itisnow@cyberdude.com</p>
+  <p><a href="https://discord.gg/2YXwKZqfS5" target="_blank" rel="noopener" style="text-decoration:underline;">discord.gg/2YXwKZqfS5</a></p>
+</footer> <!--made by LemonCookie1028-->
+
+<script>
+function copyIP(){
+  const text = document.getElementById('ip-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const label = document.getElementById('copy-label');
+    const prev = label.textContent;
+    label.textContent = 'Copied!';
+    setTimeout(() => { label.textContent = prev; }, 1800);
+  }).catch(() => {
+    document.getElementById('copy-label').textContent = 'Select & copy manually';
+  });
+}
+function copyPORT(){
+  const text = document.getElementById('port-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const label = document.getElementById('copy-port-label');
+    const prev = label.textContent;
+    label.textContent = 'Copied!';
+    setTimeout(() => { label.textContent = prev; }, 1800);
+  }).catch(() => {
+    document.getElementById('copy-port-label').textContent = 'Select & copy manually';
+  });
+}
+</script>
+
+</body><!--made by LemonCookie1028-->
+</html>

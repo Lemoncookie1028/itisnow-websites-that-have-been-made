@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrawlHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Jersey+15&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #0944bb;
+    --primary: #6c14a9;
+    --ink: rgb(253, 252, 252);
+    --secondary-ink: rgb(224, 224, 224);
+    --placeholder: #6a6d74;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "Anton", sans-serif;
+    overflow-x: hidden;
+}
+
+section {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ph {
+    color: var(--placeholder);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    padding-top: 100px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: calc(100% - 40px);
+    max-width: 900px;
+    height: 60px;
+
+    padding: 0 28px;
+    box-sizing: border-box;
+
+    border: 1px solid rgba(43, 43, 43, 0.6);
+    border-radius: 999px;
+
+    background: #15151599;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0 8px 24px;
+}
+
+nav > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+nav .left-align,
+nav .right-align {
+    gap: 16px;
+}
+
+nav .logo-img {
+    width: 40px;
+    height: 40px;
+    margin-left: 2px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+nav .btn-icon {
+    width: 14px;
+    height: 14px;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.nav-link {
+    color: var(--secondary-ink);
+    font-size: 14px;
+    margin-right: 5px;
+    transition: color 0.2s;
+        -webkit-text-stroke: 0.2px #000;
+
+}
+
+.nav-link:hover {
+    color: var(--ink);
+}
+
+/* =========================
+   REPEATED SECTION BACKGROUND
+========================= */
+
+#overview,
+#mods,
+#features {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("assets/eqweqweqw2e.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 18%,
+            black 70%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%
+        );
+
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 18%,
+            black 70%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%
+        );
+
+    mask-composite: intersect;
+}
+
+/* Keep content above background */
+
+#overview > *:not(.section-bg),
+#mods > *:not(.section-bg),
+#features > *:not(.section-bg) {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================
+   OVERVIEW / HERO
+========================= */
+
+#overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 90vh;
+    padding: 80px 20px;
+
+    box-sizing: border-box;
+    background-color: var(--bg);
+}
+
+.hero-logo {
+    max-width: 520px;
+    width: 90%;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+
+    filter: drop-shadow(
+        0 8px 20px rgba(0, 0, 0, 0.5)
+    );
+}
+
+.primary-title {
+    text-align: center;
+    font-size: 55px;
+    font-style: italic;
+    font-weight: bold;
+
+    margin: 15px auto;
+    max-width: 560px;
+
+    color: white;
+
+    -webkit-text-stroke: 1.5px #000;
+}
+
+.description-title {
+    text-align: center;
+
+    font-size: 22px;
+    font-style: italic;
+
+    color: white;
+
+    max-width: 500px;
+
+    margin: 30px 0;
+
+    -webkit-text-stroke: 0.7px #000;
+}
+
+/* =========================
+   MODS
+========================= */
+
+#mods {
+    min-height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    box-sizing: border-box;
+}
+
+.mod-title {
+    text-align: center;
+
+    font-size: 40px;
+
+    color: white;
+
+    max-width: 500px;
+
+    margin: 0 auto 30px auto;
+
+    -webkit-text-stroke: 1px #000;
+}
+
+.mod-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 130px;
+    height: 60px;
+
+    padding: 0 20px;
+    margin: 20px auto;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    color: white;
+    font-size: 16px;
+
+    background: #fa2d2d;
+
+    border: 1px solid #000;
+
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        filter 0.2s;
+}
+
+.mod-btn:hover {
+    background: #ff4444;
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn {
+    background: var(--primary);
+    border: 1px solid #431245;
+}
+
+.normal-btn {
+    background: #0f10128d;
+    border: 1px solid rgb(32, 32, 32);
+}
+
+.normal-btn,
+.primary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-radius: 5px;
+
+    height: 32px;
+    min-width: 100px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    color: var(--ink);
+    font-size: 14px;
+
+    transition:
+        background 0.2s,
+        filter 0.2s;
+}
+
+.normal-btn:hover {
+    background: #1e1e1e8d;
+}
+
+.primary-btn:hover {
+    filter: brightness(1.15);
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+#features {
+    padding: 100px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 60px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+.feature {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 0 25px;
+}
+
+.feature.right {
+    flex-direction: row-reverse;
+}
+
+.im1,
+.im2 {
+    display: block;
+
+    object-fit: cover;
+
+    width: 100%;
+    max-width: 650px;
+
+    aspect-ratio: 16 / 9;
+
+    border: 3px solid #000;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+.feature-details {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 600px;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+}
+
+.feature.right .feature-details {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.feature-title {
+    margin: 15px 0;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.feature-description {
+    margin: 0;
+}
+
+/* =========================
+   DOWNLOAD LIST
+========================= */
+
+.download-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px 20px;
+
+    box-sizing: border-box;
+
+    width: 100%;
+}
+
+.download-item {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 600px;
+    height: 60px;
+
+    border: 1px solid rgb(43, 43, 43);
+
+    background: #151515ba;
+
+    border-radius: 8px;
+
+    padding: 8px 15px;
+
+    box-sizing: border-box;
+
+    transition: background 0.2s;
+}
+
+.download-item:hover {
+    background: #1f1f1fba;
+}
+
+.download-item > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.download-item p {
+    margin: 0;
+}
+
+.download-item .ph-img {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 6px;
+}
+
+.download-link {
+    color: var(--secondary-ink);
+
+    font-size: 13px;
+
+    transition: color 0.2s;
+}
+
+.download-link:hover {
+    color: var(--ink);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgb(43, 43, 43);
+
+    background: #151515ba;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+footer .logo {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+footer .logo img,
+footer .logo .ph-img {
+    width: 32px;
+    height: 32px;
+
+    margin-left: 2px;
+
+    border-radius: 5px;
+
+    object-fit: cover;
+}
+
+footer .logo h1 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: normal;
+}
+
+footer .disclaimer {
+    margin: 0;
+
+    font-size: 12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 1000px) {
+
+    nav .primary-btn,
+    .nav-link {
+        display: none;
+    }
+
+    #overview {
+        padding: 60px 20px;
+    }
+
+    .primary-title {
+        font-size: 20px;
+    }
+
+    .description-title {
+        font-size: 18px;
+    }
+
+    #features {
+        gap: 40px;
+    }
+
+    .feature,
+    .feature.right {
+        flex-direction: column !important;
+        align-items: center !important;
+
+        text-align: center;
+    }
+
+    .feature.right .feature-details {
+        text-align: center !important;
+        align-items: center;
+    }
+
+    .im1,
+    .im2 {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .feature-details {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .feature-title {
+        font-size: 26px;
+    }
+
+    .mod-title {
+        font-size: 35px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="left-align">
+        <img src="assets/saddddddddddddddd.png" alt="Legacy Origins" class="logo-img">
+    </div>
+    <div class="right-align">
+        <a href="#download" class="nav-link">Downloads</a>
+        <a href="https://discord.gg/udTNpCSGB8" class="nav-link">Discord</a>
+    </div>
+</nav>
+
+<section id="overview">
+    <div class="section-bg"></div>
+
+    <img class="hero-logo"
+         src="assets/weqweqwweeqw.png"
+         alt="BrawlHub"
+         draggable="false">
+
+    <p class="description-title">
+        Center of all brawl stars mods there are many really good mods like
+        reversed laser that goal is to bring back the feel of brawl stars
+        from middle of 2018 so what are you waiting for go play one of the
+        great mods!
+    </p>
+</section>
+
+<section id="mods">
+    <div class="section-bg"></div>
+
+    <p class="mod-title">Mods</p>
+
+    <a href="/mods.html" class="mod-btn">
+        View Mods
+    </a>
+</section>
+
+<section id="features">
+    <div class="section-bg"></div>
+
+    <article class="feature left">
+        <img class="im1" src="assets/im1.png" alt="BrawlHub mod">
+
+        <div class="feature-details">
+            <h3 class="feature-title"></h3>
+            <p class="feature-description"></p>
+        </div>
+    </article>
+
+    <article class="feature right">
+        <img class="im2" src="assets/im2.png" alt="BrawlHub mod">
+
+        <div class="feature-details">
+            <h3 class="feature-title"></h3>
+            <p class="feature-description"></p>
+        </div>
+    </article>
+</section>
+
+</div>
+
+<footer>
+    <div class="logo">
+        <img class="ph-img" src="assets/logonoback.png" alt="temp">
+        <h1>Legacy Origins</h1>
+    </div>
+    <p class="disclaimer"><span class="ph">(temp) Fan-made project. Not affiliated with Mojang or Microsoft.</span></p>
+</footer>
+
+</body>
+</html>
