@@ -139,6 +139,56 @@ nav h1 {
     overflow: hidden;
 }
 
+.top-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("assets/bg.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.35;
+    pointer-events: none;
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 75%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 15%,
+            black 75%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+
+    mask-composite: intersect;
+}
+
 .section-bg {
     position: absolute;
     inset: 0;
@@ -638,7 +688,7 @@ footer .disclaimer {
 </nav>
 
 <section id="overview">
-    <div class="section-bg"></div>
+    <div class="top-bg"></div>
 
     <img class="hero-logo"
          src="assets/weqweqwweeqw.png"
